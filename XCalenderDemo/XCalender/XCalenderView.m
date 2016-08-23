@@ -105,11 +105,18 @@ static NSString *sectionIndentifier = @"calenderSection";
     [self.confirmBtn setTitle:@"确定" forState:UIControlStateNormal];
     [self.confirmBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 //    [self.confirmBtn setBackgroundColor:XCalender_RGB(71, 159, 255)];
-    [self.confirmBtn setBackgroundImage:[UIImage imageNamed:@"common_bg_blue"] forState:UIControlStateNormal];
-    [self.confirmBtn setBackgroundImage:[UIImage imageNamed:@"common_bg_lightblue"] forState:UIControlStateDisabled];
+    [self.confirmBtn setBackgroundImage:[self imageWithName:@"button_blue_enable"] forState:UIControlStateNormal];
+    [self.confirmBtn setBackgroundImage:[self imageWithName:@"button_diable"] forState:UIControlStateDisabled];
     self.confirmBtn.enabled = NO;
     [self.confirmBtn addTarget:self action:@selector(confirmClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.confirmBtn];
+}
+
+- (UIImage *)imageWithName:(NSString *)imageName
+{
+    NSString *bundlePath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"XCalenderSource.bundle"];
+    UIImage *image = [UIImage imageWithContentsOfFile:[bundlePath stringByAppendingPathComponent:imageName]];
+    return image;
 }
 
 #pragma mark - initDataSource
@@ -432,7 +439,7 @@ static NSString *sectionIndentifier = @"calenderSection";
             [collectionView reloadData];
         } else {
             NSString *string = [NSString stringWithFormat:@"目前统计最多只支持%zi天", self.dateSpace];
-            [XProgressHUD popToastMessage:string];
+            [[[UIAlertView alloc] initWithTitle:@"提示" message:string delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil] show];
         }
     }
 }

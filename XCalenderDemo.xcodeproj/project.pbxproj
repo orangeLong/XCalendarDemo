@@ -20,6 +20,7 @@
 		79653D3A1D6C19360015EDA9 /* XCalenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79653D311D6C19360015EDA9 /* XCalenderView.m */; settings = {ASSET_TAGS = (); }; };
 		79653D3B1D6C19360015EDA9 /* XCalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79653D331D6C19360015EDA9 /* XCalenderViewController.m */; settings = {ASSET_TAGS = (); }; };
 		79653D3C1D6C19360015EDA9 /* XCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79653D351D6C19360015EDA9 /* XCollectionReusableView.m */; settings = {ASSET_TAGS = (); }; };
+		79653D3E1D6C1CBF0015EDA9 /* XCalenderSource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 79653D3D1D6C1CBF0015EDA9 /* XCalenderSource.bundle */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		79653D331D6C19360015EDA9 /* XCalenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCalenderViewController.m; sourceTree = "<group>"; };
 		79653D341D6C19360015EDA9 /* XCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCollectionReusableView.h; sourceTree = "<group>"; };
 		79653D351D6C19360015EDA9 /* XCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCollectionReusableView.m; sourceTree = "<group>"; };
+		79653D3D1D6C1CBF0015EDA9 /* XCalenderSource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XCalenderSource.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		79653D271D6C19360015EDA9 /* XCalender */ = {
 			isa = PBXGroup;
 			children = (
+				79653D3D1D6C1CBF0015EDA9 /* XCalenderSource.bundle */,
 				79653D281D6C19360015EDA9 /* XCalenderCell.h */,
 				79653D291D6C19360015EDA9 /* XCalenderCell.m */,
 				79653D2A1D6C19360015EDA9 /* XCalenderCell.xib */,
@@ -183,6 +186,7 @@
 				79653D201D6C18FA0015EDA9 /* LaunchScreen.storyboard in Resources */,
 				79653D1D1D6C18FA0015EDA9 /* Assets.xcassets in Resources */,
 				79653D1B1D6C18FA0015EDA9 /* Main.storyboard in Resources */,
+				79653D3E1D6C1CBF0015EDA9 /* XCalenderSource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,10 +317,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhang lei (25LL92M933)";
 				INFOPLIST_FILE = XCalenderDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xkeshi.XCalenderDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f79daae5-a9b9-4eda-8827-8525e1be107a";
 			};
 			name = Debug;
 		};
@@ -324,10 +331,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhang lei (25LL92M933)";
 				INFOPLIST_FILE = XCalenderDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xkeshi.XCalenderDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f79daae5-a9b9-4eda-8827-8525e1be107a";
 			};
 			name = Release;
 		};
@@ -350,6 +360,7 @@
 				79653D261D6C18FA0015EDA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

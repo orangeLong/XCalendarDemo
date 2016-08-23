@@ -6,7 +6,8 @@
 //  Copyright © 2016年 Xkeshi. All rights reserved.
 //
 
-#import "BaseObject.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger, XTallyDate) {
     XTallyDateLastDay,
@@ -15,7 +16,7 @@ typedef NS_ENUM(NSUInteger, XTallyDate) {
     XTallyDateCustom,
 };
 
-@interface XCalenderCommon : BaseObject
+@interface XCalenderCommon : NSObject
 
 + (NSArray *)dateSignWith:(XTallyDate)dateSign;
 

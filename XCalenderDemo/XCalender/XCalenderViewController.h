@@ -6,9 +6,9 @@
 //  Copyright © 2016年 Xkeshi. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface XCalenderViewController : BaseViewController
+@interface XCalenderViewController : UIViewController
 
 @property (nonatomic, copy) void(^completeBlock)(NSString *first, NSString *last);
 

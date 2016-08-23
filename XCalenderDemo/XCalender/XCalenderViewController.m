@@ -7,9 +7,7 @@
 //
 
 #import "XCalenderViewController.h"
-
 #import "XCalenderView.h"
-#import "UIBarButtonItem+Style.h"
 
 @interface XCalenderViewController ()
 
@@ -43,16 +41,17 @@
 - (void)addDeleteBarButton
 {
     self.navigationItem.hidesBackButton = YES;
-    UIBarButtonItem *button = [UIBarButtonItem barButtonItemWithImageName:@"close" target:self action:@selector(backAction)];
-    self.navigationItem.leftBarButtonItem = button;
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"XCalenderSource" ofType:@"bundle"];
+    UIImage *image = [UIImage imageWithContentsOfFile:[bundlePath stringByAppendingPathComponent:@"close.png"]];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
 }
 
 - (void)initView
 {
-    XCalenderView *calenderView = [[XCalenderView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 64)];
+    XCalenderView *calenderView = [[XCalenderView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)];
     calenderView.dateSpace = 30;
     [self.view addSubview:calenderView];
-    WeakSelf(weakSelf);
+    __weak __typeof(&*self)weakSelf = self;
     [calenderView setConfirmBlock:^(NSString *first, NSString *last) {
         __strong __typeof(&*weakSelf)strongSelf = weakSelf;
         if (strongSelf.completeBlock) {

@@ -64,7 +64,7 @@
                 XLog_DEBUG(@"选中日期%@------%@", first, last);
             }
         }];
-        BaseNavigationController *nc = [[BaseNavigationController alloc] initWithRootViewController:vc];
+        UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
         [presentVC presentViewController:nc animated:YES completion:nil];
     }
 }
