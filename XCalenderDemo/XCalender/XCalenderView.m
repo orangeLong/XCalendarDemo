@@ -93,7 +93,9 @@ static NSString *sectionIndentifier = @"calenderSection";
     collectionView.delegate = self;
     collectionView.dataSource = self;
     [self addSubview:collectionView];
-    [collectionView registerNib:[UINib nibWithNibName:@"XCalenderCell" bundle:nil] forCellWithReuseIdentifier:cellIndentifier];
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"XCalenderSource" ofType:@"bundle"];
+    NSBundle *customBundle = [NSBundle bundleWithPath:bundlePath];
+    [collectionView registerNib:[UINib nibWithNibName:@"XCalenderCell" bundle:customBundle] forCellWithReuseIdentifier:cellIndentifier];
     [collectionView registerClass:[XCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:sectionIndentifier];
     [collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:self.allMonths.count - 1] atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
 }
